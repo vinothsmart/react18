@@ -28,7 +28,7 @@ const Book = () => {
   );
 };
 
-const Image = () => <h2>image placeholder</h2>;
+const Image = () => <img src="https://picsum.photos/200" alt="book" />;
 const Title = () => <h2>Title of the book</h2>;
 const Author = () => <h2>Author</h2>;
 

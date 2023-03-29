@@ -28,8 +28,13 @@ const Book = () => {
   );
 };
 
-const Image = () => <img src="https://picsum.photos/200" alt="book" />;
-const Title = () => <h2>Title of the book</h2>;
+const Image = () => (
+  <img
+    src="https://m.media-amazon.com/images/I/51VyW1qRmSL._SX329_BO1,204,203,200_.jpg"
+    alt="Dog Man: Twenty Thousand Fleas Under the Sea"
+  />
+);
+const Title = () => <h2>Dog Man: Twenty Thousand Fleas Under the Sea</h2>;
 const Author = () => <h2>Author</h2>;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

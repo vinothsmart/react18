@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 const Greeting = () => {
   return (
     <>
-      <h1>Hello World</h1>
+      <h1 className="someClass">Hello World</h1>
       <ul>
         <li>
           <a href="https://github.com/vinothsmart/">Hi Vinoth</a>

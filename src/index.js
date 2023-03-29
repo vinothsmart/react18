@@ -10,6 +10,7 @@ const Greeting = () => {
           <a href="https://github.com/vinothsmart/">Hi Vinoth</a>
         </li>
       </ul>
+      <input type="text" />
     </>
   );
 };

@@ -5,6 +5,15 @@ const BookList = () => {
   return (
     <section>
       <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
     </section>
   );
 };

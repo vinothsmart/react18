@@ -29,7 +29,7 @@ const Book = () => {
 };
 
 const Image = () => <h2>image placeholder</h2>;
-const Title = () => <h2>Book Title</h2>;
+const Title = () => <h2>Title of the book</h2>;
 const Author = () => <h2>Author</h2>;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -1,15 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
 
 const BookList = () => {
   return (
     <section>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
       <Book />
       <Book />
       <Book />

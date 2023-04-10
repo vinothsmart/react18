@@ -16,26 +16,15 @@ const BookList = () => {
 const Book = () => {
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img
+        src="./images/book1.jpg"
+        alt="Dog Man: Twenty Thousand Fleas Under the Sea"
+      />
+      <h2>Dog Man: Twenty Thousand Fleas Under the Sea</h2>
+      <h2>Author</h2>
     </article>
   );
 };
-
-const Image = () => (
-  <img
-    src="./images/book1.jpg"
-    alt="Dog Man: Twenty Thousand Fleas Under the Sea"
-  />
-);
-
-const Title = () => <h2>Dog Man: Twenty Thousand Fleas Under the Sea</h2>;
-const Author = () => (
-  <h2 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.5rem" }}>
-    Author
-  </h2>
-);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<BookList />, root);

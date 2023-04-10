@@ -13,15 +13,17 @@ const BookList = () => {
   );
 };
 
+const author = "Dav Pilkey";
 const Book = () => {
+  const title = "Dog Man: Twenty Thousand Fleas Under the Sea";
   return (
     <article className="book">
       <img
         src="./images/book1.jpg"
         alt="Dog Man: Twenty Thousand Fleas Under the Sea"
       />
-      <h2>Dog Man: Twenty Thousand Fleas Under the Sea</h2>
-      <h2>Author</h2>
+      <h2>{title}</h2>
+      <h4>{author}</h4>
     </article>
   );
 };

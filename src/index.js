@@ -20,11 +20,16 @@ const books = [
 const BookList = () => {
   return (
     <section className="booklist">
+      <EventExamples />
       {books.map((book) => {
         return <Book key={book.id} {...book}></Book>;
       })}
     </section>
   );
+};
+
+const EventExamples = () => {
+  return <>Events</>;
 };
 
 const Book = ({ img, title, author }) => {

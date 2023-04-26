@@ -56,7 +56,10 @@ const EventExamples = () => {
           name="example"
           style={{ margin: "1rem 0" }}
         />
-        <button onClick={handleButtonClick}>Click me</button>
+        <button onClick={handleButtonClick} type="button">
+          Click me
+        </button>
+        <button type="submit">submit</button>
       </form>
     </section>
   );

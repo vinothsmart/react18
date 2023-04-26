@@ -30,8 +30,9 @@ const BookList = () => {
 
 const EventExamples = () => {
   const handleFromInput = (e) => {
-    e.preventDefault();
-    console.log("hello world");
+    console.log(e.target);
+    console.log(e.target.name);
+    console.log(e.target.value);
   };
 
   const handleButtonClick = (e) => {
@@ -40,9 +41,14 @@ const EventExamples = () => {
     alert("hello world");
   };
 
+  const handleSumit = (e) => {
+    e.preventDefault();
+    console.log(e);
+  };
+
   return (
     <section>
-      <form>
+      <form onSubmit={handleSumit}>
         <h2>Typical Form</h2>
         <input
           onChange={handleFromInput}

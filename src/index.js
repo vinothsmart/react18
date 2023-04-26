@@ -29,7 +29,31 @@ const BookList = () => {
 };
 
 const EventExamples = () => {
-  return <>Events</>;
+  const handleFromInput = (e) => {
+    e.preventDefault();
+    console.log("hello world");
+  };
+
+  const handleButtonClick = (e) => {
+    console.log(e);
+    console.log(e.target);
+    alert("hello world");
+  };
+
+  return (
+    <section>
+      <form>
+        <h2>Typical Form</h2>
+        <input
+          onChange={handleFromInput}
+          type="text"
+          name="example"
+          style={{ margin: "1rem 0" }}
+        />
+        <button onClick={handleButtonClick}>Click me</button>
+      </form>
+    </section>
+  );
 };
 
 const Book = ({ img, title, author }) => {

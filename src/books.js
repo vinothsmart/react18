@@ -1,4 +1,4 @@
-export const books = [
+const books = [
   {
     author: "Dav Pilkey",
     title: "Dog Man: Twenty Thousand Fleas Under the Sea",
@@ -12,3 +12,5 @@ export const books = [
     id: 2,
   },
 ];
+
+export default books;

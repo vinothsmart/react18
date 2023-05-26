@@ -1,4 +1,5 @@
 import React from "react";
+import AboutImg from "../images/about.jpeg";
 
 const About = () => {
   return (
@@ -11,11 +12,7 @@ const About = () => {
 
       <div className="section-center about-center">
         <div className="about-img">
-          <img
-            src="./images/about.jpeg"
-            className="about-photo"
-            alt="awesome beach"
-          />
+          <img src={AboutImg} className="about-photo" alt="awesome beach" />
         </div>
         <article className="about-info">
           <h3>explore the difference</h3>
@@ -29,7 +26,7 @@ const About = () => {
             quisquam harum nam cumque temporibus explicabo dolorum sapiente odio
             unde dolor?
           </p>
-          <a href="#" className="btn">
+          <a href="#about" className="btn">
             read more
           </a>
         </article>

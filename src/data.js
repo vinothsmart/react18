@@ -1,3 +1,8 @@
+import tour1 from "./images/tour-1.jpeg";
+import tour2 from "./images/tour-2.jpeg";
+import tour3 from "./images/tour-3.jpeg";
+import tour4 from "./images/tour-4.jpeg";
+
 export const pageLinks = [
   { id: 1, href: "#home", text: "home" },
   { id: 2, href: "#about", text: "about" },
@@ -44,5 +49,56 @@ export const services = [
     title: "amazing comfort",
     text: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
     Asperiores, officia.`,
+  },
+];
+
+export const tours = [
+  {
+    id: 1,
+    img: tour1,
+    date: "august 26th, 2020",
+    title: "tibet adventure",
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Cumque vitae tempore voluptatum maxime reprehenderit eum quod
+    exercitationem fugit, qui corporis.`,
+    location: "china",
+    days: "6 days",
+    price: "$2100",
+  },
+  {
+    id: 2,
+    img: tour2,
+    date: "october 1th, 2020",
+    title: "best of java",
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Cumque vitae tempore voluptatum maxime reprehenderit eum quod
+    exercitationem fugit, qui corporis.`,
+    location: "indonesia",
+    days: "11 days",
+    price: "$1400",
+  },
+  {
+    id: 3,
+    img: tour3,
+    date: "november 15th, 2020",
+    title: "explore australia",
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Cumque vitae tempore voluptatum maxime reprehenderit eum quod
+    exercitationem fugit, qui corporis.`,
+    location: "australia",
+    days: "15 days",
+    price: "$3200",
+  },
+  {
+    id: 4,
+    img: tour4,
+    date: "december 20th, 2020",
+    title: "best of africa",
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Cumque vitae tempore voluptatum maxime reprehenderit eum quod
+    exercitationem fugit, qui corporis.`,
+    location: "africa",
+    days: "10 days",
+    price: "$1700",
   },
 ];

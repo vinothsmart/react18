@@ -25,20 +25,18 @@ const Navbar = () => {
         </ul>
 
         <ul className="nav-icons">
-          {socialLinks.map(({ id, href, icon }) => {
-            return (
-              <li key={id}>
-                <a
-                  href={href}
-                  target="_blank"
-                  className="nav-icon"
-                  rel="noreferrer"
-                >
-                  <i className={icon}></i>
-                </a>
-              </li>
-            );
-          })}
+          {socialLinks.map(({ id, href, icon }) => (
+            <li key={id}>
+              <a
+                href={href}
+                target="_blank"
+                className="nav-icon"
+                rel="noreferrer"
+              >
+                <i className={icon}></i>
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

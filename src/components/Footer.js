@@ -1,25 +1,12 @@
 import React from "react";
-import { socialLinks } from "../data";
 import PageLinks from "./PageLinks";
+import SocialLinks from "./SocialLinks";
 
 const Footer = () => {
   return (
     <footer className="section footer">
       <PageLinks parentClass="footer-links" itemClass="footer-link" />
-      <ul className="footer-icons">
-        {socialLinks.map(({ id, href, icon }) => (
-          <li key={id}>
-            <a
-              href={href}
-              target="_blank"
-              className="footer-icon"
-              rel="noopener noreferrer"
-            >
-              <i className={icon}></i>
-            </a>
-          </li>
-        ))}
-      </ul>
+      <SocialLinks parentClass="footer-icons" itemClass="footer-icon" />
       <p className="copyright">
         copyright &copy; Backroads travel tours company
         <span id="date">{new Date().getFullYear()}</span> all rights reserved

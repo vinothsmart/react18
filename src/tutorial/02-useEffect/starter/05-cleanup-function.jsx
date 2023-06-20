@@ -19,14 +19,12 @@ const CleanupFunction = () => {
 
 const RandomComponent = () => {
   useEffect(() => {
-    console.log('Component Mounted');
-    const intId = setInterval(() => {
-      console.log('Hello');
-    }, 2000);
+    const someFunc = () => {
+      console.log('hello world');
+    };
+    window.addEventListener('scroll', someFunc);
     return () => {
-      console.log('Component Unmounted');
-      clearInterval(intId);
-      console.log('Cleanup Function');
+      window.removeEventListener('scroll', someFunc);
     };
   }, []);
   return <h2>Random Component</h2>;

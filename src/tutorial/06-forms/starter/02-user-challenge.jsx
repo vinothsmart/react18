@@ -54,15 +54,7 @@ const UserChallenge = () => {
       <div className='form-row'>
         <h4>users</h4>
         {users.map(({ id, name }) => (
-          <div
-            key={id}
-            style={{
-              display: 'flex',
-              gap: 20,
-              marginBottom: 20,
-              justifyContent: 'center',
-            }}
-          >
+          <div key={id}>
             <p>{name}</p>
             <button className='btn' onClick={handleDelete(id)}>
               remove

@@ -1,7 +1,9 @@
 import { useState, useCallback } from 'react';
+import { data } from '../../../data';
 
 const UserChallenge = () => {
   const [name, setName] = useState('');
+  const [users, setUsers] = useState(data);
 
   const handleChange = useCallback((e) => {
     setName(e.target.value);
@@ -10,9 +12,21 @@ const UserChallenge = () => {
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      console.log(name);
+      setUsers((preVal) => {
+        return [...preVal, { id: new Date().getTime().toString(), name }];
+      });
+      setName('');
     },
     [name]
+  );
+
+  const handleDelete = useCallback(
+    (deleteUserId) => () => {
+      setUsers((preVal) => {
+        return preVal.filter((user) => user.id !== deleteUserId);
+      });
+    },
+    []
   );
 
   return (
@@ -36,7 +50,25 @@ const UserChallenge = () => {
           submit
         </button>
       </form>
-      {/* render users below */}
+      <div className='form-row'>
+        <h4>users</h4>
+        {users.map(({ id, name }) => (
+          <div
+            key={id}
+            style={{
+              display: 'flex',
+              gap: 20,
+              marginBottom: 20,
+              justifyContent: 'center',
+            }}
+          >
+            <p>{name}</p>
+            <button className='btn' onClick={handleDelete(id)}>
+              remove
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

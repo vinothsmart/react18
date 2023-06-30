@@ -12,6 +12,7 @@ const UserChallenge = () => {
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
+      if (!name) return;
       setUsers((preVal) => {
         return [...preVal, { id: new Date().getTime().toString(), name }];
       });

@@ -1,4 +1,23 @@
+import { useState, useCallback } from 'react';
+
 const MultipleInputs = () => {
+  const [user, setUser] = useState({ name: '', email: '', password: '' });
+
+  const handleChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setUser((preVal) => {
+      return { ...preVal, [name]: value };
+    });
+  }, []);
+
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      console.log(user);
+    },
+    [user]
+  );
+
   return (
     <div>
       <form className='form'>
@@ -8,24 +27,44 @@ const MultipleInputs = () => {
           <label htmlFor='name' className='form-label'>
             name
           </label>
-          <input type='text' className='form-input' id='name' />
+          <input
+            type='text'
+            className='form-input'
+            id='name'
+            value={user.name}
+            onChange={handleChange}
+            name='name'
+          />
         </div>
         {/* email */}
         <div className='form-row'>
           <label htmlFor='email' className='form-label'>
             Email
           </label>
-          <input type='email' className='form-input' id='email' />
+          <input
+            type='email'
+            className='form-input'
+            id='email'
+            value={user.email}
+            onChange={handleChange}
+            name='email'
+          />
         </div>
         {/* email */}
         <div className='form-row'>
           <label htmlFor='password' className='form-label'>
             Password
           </label>
-          <input type='password' className='form-input' id='password' />
+          <input
+            type='password'
+            className='form-input'
+            id='password'
+            value={user.password}
+            onChange={handleChange}
+            name='password'
+          />
         </div>
-
-        <button type='submit' className='btn btn-block'>
+        <button type='submit' className='btn btn-block' onClick={handleSubmit}>
           submit
         </button>
       </form>

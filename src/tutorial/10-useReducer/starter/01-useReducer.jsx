@@ -5,7 +5,14 @@ const defaultState = {
   people: data,
 };
 
-const reducer = () => {};
+const reducer = (state, action) => {
+  if (action.type === 'CLEAR_ITEMS') {
+    return { ...state, people: [] };
+  }
+  if (action.type === 'RESET_ITEMS') {
+    return { ...state, people: data };
+  }
+};
 
 const ReducerBasics = () => {
   const [state, dispatch] = useReducer(reducer, defaultState);
@@ -16,10 +23,12 @@ const ReducerBasics = () => {
   };
 
   const clearList = useCallback(() => {
+    dispatch({ type: 'CLEAR_ITEMS' });
     // setPeople([]);
   }, []);
 
   const resetList = useCallback(() => {
+    dispatch({ type: 'RESET_ITEMS' });
     // setPeople(data);
   }, []);
 

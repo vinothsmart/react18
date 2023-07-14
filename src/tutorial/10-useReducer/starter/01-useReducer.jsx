@@ -3,15 +3,22 @@ import { data } from '../../../data';
 
 const defaultState = {
   people: data,
+  isLoading: false,
 };
 
+const CLEAR_ITEMS = 'CLEAR_ITEMS';
+const RESET_ITEMS = 'RESET_ITEMS';
+const REMOVE_ITEM = 'REMOVE_ITEM';
+
 const reducer = (state, action) => {
-  if (action.type === 'CLEAR_ITEMS') {
+  if (action.type === CLEAR_ITEMS) {
     return { ...state, people: [] };
   }
-  if (action.type === 'RESET_ITEMS') {
+  if (action.type === RESET_ITEMS) {
     return { ...state, people: data };
   }
+  // return state;
+  throw new Error(`No matching "${action.type}" action type`);
 };
 
 const ReducerBasics = () => {
@@ -23,12 +30,12 @@ const ReducerBasics = () => {
   };
 
   const clearList = useCallback(() => {
-    dispatch({ type: 'CLEAR_ITEMS' });
+    dispatch({ type: CLEAR_ITEMS });
     // setPeople([]);
   }, []);
 
   const resetList = useCallback(() => {
-    dispatch({ type: 'RESET_ITEMS' });
+    dispatch({ type: RESET_ITEMS });
     // setPeople(data);
   }, []);
 

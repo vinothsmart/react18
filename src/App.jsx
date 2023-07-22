@@ -1,9 +1,9 @@
-import LowerState from './tutorial/11-performance/starter/01-lower-state';
+import LowerStateChallenge from './tutorial/11-performance/starter/02-lower-state-challenge';
 
 function App() {
   return (
     <div className='container'>
-      <LowerState />
+      <LowerStateChallenge />
     </div>
   );
 }

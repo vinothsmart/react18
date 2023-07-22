@@ -1,33 +1,11 @@
 import { useCallback, useReducer } from 'react';
 import { data } from '../../../data';
+import { CLEAR_ITEMS, REMOVE_ITEM, RESET_ITEMS } from './actions';
+import reducer from './reducer';
 
 const defaultState = {
   people: data,
   isLoading: false,
-};
-
-const CLEAR_ITEMS = 'CLEAR_ITEMS';
-const RESET_ITEMS = 'RESET_ITEMS';
-const REMOVE_ITEM = 'REMOVE_ITEM';
-
-const reducer = (state, action) => {
-  if (action.type === CLEAR_ITEMS) {
-    return { ...state, people: [] };
-  }
-
-  if (action.type === RESET_ITEMS) {
-    return { ...state, people: data };
-  }
-
-  if (action.type === REMOVE_ITEM) {
-    return {
-      ...state,
-      people: state.people.filter((person) => person.id !== action.payload.ID),
-    };
-  }
-
-  // return state;
-  throw new Error(`No matching "${action.type}" action type`);
 };
 
 const ReducerBasics = () => {

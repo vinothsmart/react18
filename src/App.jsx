@@ -1,9 +1,9 @@
-import LowerState from './tutorial/11-performance/starter/03-hooks';
+import FetchData from './tutorial/02-useEffect/starter/04-fetch-data';
 
 function App() {
   return (
     <div className='container'>
-      <LowerState />
+      <FetchData />
     </div>
   );
 }

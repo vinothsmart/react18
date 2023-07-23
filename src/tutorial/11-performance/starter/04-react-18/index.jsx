@@ -22,7 +22,7 @@ const LatestReact = () => {
     });
   };
   return (
-    <section>
+    <Suspense fallback={<h4>Loading...</h4>}>
       <form className='form'>
         <input
           type='text'
@@ -32,28 +32,21 @@ const LatestReact = () => {
         />
       </form>
       <h4>Items Below</h4>
-      {isPending ? (
-        <h4>Loading...</h4>
-      ) : (
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr',
-            marginTop: '2rem',
-          }}
-        >
-          {items}
-        </div>
-      )}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr 1fr',
+          marginTop: '2rem',
+        }}
+      >
+        {items}
+      </div>
       <button className='btn' onClick={() => setShow(!show)}>
         show/hide
       </button>
-      {show && (
-        <Suspense fallback={<h4>Loading...</h4>}>
-          <SlowComponent />
-        </Suspense>
-      )}
-    </section>
+      {/* rest of the logic */}
+      <section>{show && <SlowComponent />}</section>
+    </Suspense>
   );
 };
 export default LatestReact;

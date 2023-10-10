@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
+import Loading from './Loading';
+import Tours from './Tours';
 
 const url = 'https://course-api.com/react-tours-project';
 
@@ -7,21 +9,32 @@ const App = () => {
   const [tours, setTours] = useState([]);
 
   const fetchTours = useCallback(async () => {
+    setIsLoading(true);
     try {
       const response = await fetch(url);
       const tours = await response.json();
-      setIsLoading(false);
-      console.log({ tours });
       setTours(tours);
     } catch (error) {
-      setIsLoading(false);
       console.log(error);
     }
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
     fetchTours();
   }, []);
-  return <h2>Tours Starter</h2>;
+
+  if (isLoading)
+    return (
+      <main>
+        <Loading />
+      </main>
+    );
+
+  return (
+    <main>
+      <Tours tours={tours} />
+    </main>
+  );
 };
 export default App;

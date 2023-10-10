@@ -20,6 +20,14 @@ const App = () => {
     setIsLoading(false);
   }, []);
 
+  const removeTour = useCallback(
+    id => () => {
+      const newTours = tours.filter(tour => tour.id !== id);
+      setTours(newTours);
+    },
+    [tours],
+  );
+
   useEffect(() => {
     fetchTours();
   }, []);
@@ -33,7 +41,7 @@ const App = () => {
 
   return (
     <main>
-      <Tours tours={tours} />
+      <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
 };

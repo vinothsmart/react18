@@ -2,7 +2,7 @@ import React from "react";
 
 const PageLink = ({ link, itemClass }) => {
   return (
-    <li key={link.id}>
+    <li>
       <a href={link.href} className={itemClass}>
         {link.text}
       </a>

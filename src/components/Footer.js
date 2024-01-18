@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import PageLinks from "./PageLinks";
 import SocialLinks from "./SocialLinks";
 
@@ -15,4 +15,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const TourCard = ({ id, img, date, title, text, location, days, price }) => {
   return (
     <article className="tour-card" key={id}>
@@ -25,4 +27,4 @@ const TourCard = ({ id, img, date, title, text, location, days, price }) => {
   );
 };
 
-export default TourCard;
+export default memo(TourCard);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 const Service = ({ icon, title, text }) => {
   return (
@@ -14,4 +14,4 @@ const Service = ({ icon, title, text }) => {
   );
 };
 
-export default Service;
+export default memo(Service);

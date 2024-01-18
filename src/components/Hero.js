@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const Hero = () => {
   return (
     <section className="hero" id="home">
@@ -15,4 +17,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);

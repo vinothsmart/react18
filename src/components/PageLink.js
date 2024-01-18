@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 const PageLink = ({ link, itemClass }) => {
   return (
@@ -10,4 +10,4 @@ const PageLink = ({ link, itemClass }) => {
   );
 };
 
-export default PageLink;
+export default memo(PageLink);

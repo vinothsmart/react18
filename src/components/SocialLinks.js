@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { socialLinks } from "../data";
 import SocialLink from "./SocialLink";
 
@@ -12,4 +12,4 @@ const SocialLinks = ({ parentClass, itemClass }) => {
   );
 };
 
-export default SocialLinks;
+export default memo(SocialLinks);

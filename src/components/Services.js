@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { services } from "../data";
 import Service from "./Service";
 import Title from "./Title";
@@ -16,4 +16,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default memo(Services);

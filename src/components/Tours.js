@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { tours } from "../data";
 import Title from "./Title";
 import TourCard from "./TourCard";
@@ -25,4 +25,4 @@ const Tours = () => {
   );
 };
 
-export default Tours;
+export default memo(Tours);

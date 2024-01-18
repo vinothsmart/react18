@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 const SocialLink = ({ href, itemClass, icon }) => {
   return (
@@ -10,4 +10,4 @@ const SocialLink = ({ href, itemClass, icon }) => {
   );
 };
 
-export default SocialLink;
+export default memo(SocialLink);

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { pageLinks } from "../data";
 import PageLink from "./PageLink";
 
@@ -11,4 +12,4 @@ const PageLinks = ({ parentClass, itemClass }) => {
   );
 };
 
-export default PageLinks;
+export default memo(PageLinks);

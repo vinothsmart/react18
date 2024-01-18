@@ -1,3 +1,4 @@
+import { memo } from "react";
 import logo from "../images/logo.svg";
 import PageLinks from "./PageLinks";
 import SocialLinks from "./SocialLinks";
@@ -19,4 +20,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

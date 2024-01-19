@@ -15,7 +15,7 @@ const FetchData = () => {
   }, []);
   useEffect(() => {
     getUsers();
-  }, [getUsers]);
+  }, []);
 
   return (
     <section>

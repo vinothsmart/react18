@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { data } from '../../../data';
+import User from './06-user';
 
 const UserChallenge = () => {
   const [name, setName] = useState('');
@@ -52,12 +53,7 @@ const UserChallenge = () => {
       <div className='form-row'>
         <h4>users</h4>
         {users.map(({ id, name }) => (
-          <div key={id}>
-            <p>{name}</p>
-            <button className='btn' onClick={handleDelete(id)}>
-              remove
-            </button>
-          </div>
+          <User key={id} id={id} name={name} handleDelete={handleDelete} />
         ))}
       </div>
     </div>

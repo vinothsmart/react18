@@ -23,9 +23,7 @@ const UserChallenge = () => {
 
   const handleDelete = useCallback(
     (deleteUserId) => () => {
-      setUsers((preVal) => {
-        return preVal.filter((user) => user.id !== deleteUserId);
-      });
+      setUsers((preVal) => preVal.filter((user) => user.id !== deleteUserId));
     },
     []
   );

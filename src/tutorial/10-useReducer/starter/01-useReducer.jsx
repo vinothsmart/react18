@@ -11,13 +11,16 @@ const defaultState = {
 const ReducerBasics = () => {
   const [state, dispatch] = useReducer(reducer, defaultState);
 
-  const removeItem = (id) => {
-    dispatch({ type: REMOVE_ITEM, payload: id });
-    // setPeople((oldPeople) => {
-    //   let newPeople = oldPeople.filter((person) => person.id !== id);
-    //   return newPeople;
-    // });
-  };
+  const removeItem = useCallback(
+    (id) => () => {
+      dispatch({ type: REMOVE_ITEM, payload: id });
+      // setPeople((oldPeople) => {
+      //   let newPeople = oldPeople.filter((person) => person.id !== id);
+      //   return newPeople;
+      // });
+    },
+    []
+  );
 
   const clearList = useCallback(() => {
     dispatch({ type: CLEAR_ITEMS });
@@ -36,7 +39,7 @@ const ReducerBasics = () => {
         return (
           <div key={id} className='item'>
             <h4>{name}</h4>
-            <button onClick={() => removeItem(id)}>remove</button>
+            <button onClick={removeItem(id)}>remove</button>
           </div>
         );
       })}

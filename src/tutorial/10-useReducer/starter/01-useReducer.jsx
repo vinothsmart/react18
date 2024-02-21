@@ -32,9 +32,11 @@ const ReducerBasics = () => {
     // setPeople(data);
   }, []);
 
+  const { people } = state;
+
   return (
     <div>
-      {state.people.map((person) => {
+      {people.map((person) => {
         const { id, name } = person;
         return (
           <div key={id} className='item'>
@@ -43,7 +45,7 @@ const ReducerBasics = () => {
           </div>
         );
       })}
-      {state.people.length < 1 ? (
+      {people.length < 1 ? (
         <button
           className='btn'
           style={{ marginTop: '2rem' }}

@@ -1,9 +1,9 @@
-import ReducerBasics from './tutorial/10-useReducer/starter/01-useReducer';
+import LowerStateChallenge from './tutorial/11-performance/starter/02-lower-state-challenge';
 
 function App() {
   return (
     <div className='container'>
-      <ReducerBasics />
+      <LowerStateChallenge />
     </div>
   );
 }

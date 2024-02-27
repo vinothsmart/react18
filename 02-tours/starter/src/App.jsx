@@ -32,12 +32,26 @@ const App = () => {
     fetchTours();
   }, [fetchTours]);
 
-  if (isLoading)
+  if (isLoading) {
     return (
       <main>
         <Loading />
       </main>
     );
+  }
+
+  if (tours.length === 0) {
+    return (
+      <main>
+        <div className="title">
+          <h2>no tours left</h2>
+          <button className="btn" style={{ marginTop: '2em' }} onClick={fetchTours}>
+            refresh
+          </button>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main>

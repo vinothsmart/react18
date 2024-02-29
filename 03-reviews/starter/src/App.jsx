@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaBeer } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 import people from "./data";
 
 const App = () => {
@@ -9,7 +9,6 @@ const App = () => {
   return (
     <>
       <h2>Reviews Starter</h2>
-      <FaBeer className="beer" />
     </>
   );
 };

@@ -7,10 +7,15 @@ const App = () => {
   const { name, job, image, text } = people[index];
 
   const handlePrevious = useCallback(() => {
-    setIndex((currentIndex) => currentIndex - 1);
+    setIndex((currentIndex) =>
+      currentIndex === 0 ? people.length - 1 : currentIndex - 1
+    );
   }, []);
+
   const handleNext = useCallback(() => {
-    setIndex((currentIndex) => currentIndex + 1);
+    setIndex((currentIndex) =>
+      currentIndex === people.length - 1 ? 0 : currentIndex + 1
+    );
   }, []);
 
   return (

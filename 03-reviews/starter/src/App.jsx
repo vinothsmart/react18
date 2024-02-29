@@ -30,6 +30,14 @@ const App = () => {
     });
   }, [checkNumber]);
 
+  const randomPerson = useCallback(() => {
+    let randomNumber = Math.floor(Math.random() * people.length);
+    if (randomNumber === index) {
+      randomNumber = index + 1;
+    }
+    setIndex(checkNumber(randomNumber));
+  }, [checkNumber, index]);
+
   return (
     <main>
       <article className="review">
@@ -50,6 +58,9 @@ const App = () => {
             <FaChevronRight />
           </button>
         </div>
+        <button className="btn btn-hipster" onClick={randomPerson}>
+          surprise me
+        </button>
       </article>
     </main>
   );

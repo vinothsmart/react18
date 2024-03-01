@@ -6,37 +6,27 @@ const App = () => {
   const [index, setIndex] = useState(0);
   const { name, job, image, text } = people[index];
 
-  const checkNumber = useCallback((number) => {
-    if (number > people.length - 1) {
-      return 0;
-    }
-    if (number < 0) {
-      return people.length - 1;
-    }
-    return number;
+  const handlePrevious = useCallback(() => {
+    setIndex((currentIndex) =>
+      currentIndex === 0 ? people.length - 1 : currentIndex - 1
+    );
   }, []);
 
-  const handlePrevious = useCallback(() => {
-    setIndex((currentIndex) => {
-      const newIndex = currentIndex - 1;
-      return checkNumber(newIndex);
-    });
-  }, [checkNumber]);
-
   const handleNext = useCallback(() => {
-    setIndex((currentIndex) => {
-      const newIndex = currentIndex + 1;
-      return checkNumber(newIndex);
-    });
-  }, [checkNumber]);
+    setIndex((currentIndex) =>
+      currentIndex === people.length - 1 ? 0 : currentIndex + 1
+    );
+  }, []);
 
   const randomPerson = useCallback(() => {
     let randomNumber = Math.floor(Math.random() * people.length);
     if (randomNumber === index) {
       randomNumber = index + 1;
+      setIndex((currentIndex) =>
+        currentIndex === people.length - 1 ? 0 : currentIndex + 1
+      );
     }
-    setIndex(checkNumber(randomNumber));
-  }, [checkNumber, index]);
+  }, [index]);
 
   return (
     <main>

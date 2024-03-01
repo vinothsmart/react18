@@ -6,15 +6,13 @@ const App = () => {
   const [index, setIndex] = useState(0);
   const { name, job, image, text } = people[index];
 
-  const handlePrevious = useCallback(() => {
-    setIndex((currentIndex) =>
-      currentIndex === 0 ? people.length - 1 : currentIndex - 1
-    );
+  const handleNext = useCallback(() => {
+    setIndex((currentIndex) => (currentIndex + 1) % people.length);
   }, []);
 
-  const handleNext = useCallback(() => {
-    setIndex((currentIndex) =>
-      currentIndex === people.length - 1 ? 0 : currentIndex + 1
+  const handlePrevious = useCallback(() => {
+    setIndex(
+      (currentIndex) => (currentIndex - 1 + people.length) % people.length
     );
   }, []);
 
@@ -22,10 +20,8 @@ const App = () => {
     let randomNumber = Math.floor(Math.random() * people.length);
     if (randomNumber === index) {
       randomNumber = index + 1;
-      setIndex((currentIndex) =>
-        currentIndex === people.length - 1 ? 0 : currentIndex + 1
-      );
     }
+    setIndex(randomNumber % people.length);
   }, [index]);
 
   return (

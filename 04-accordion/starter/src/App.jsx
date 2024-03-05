@@ -8,9 +8,11 @@ const App = () => {
 
   const toggleQuestion = useCallback(
     (id) => () => {
-      setActiveID((prevID) => (prevID === id ? null : id));
+      // setActiveID((prevID) => (prevID === id ? null : id));
+      const activeId = activeID === id ? null : id;
+      setActiveID(activeId);
     },
-    []
+    [activeID]
   );
 
   return (

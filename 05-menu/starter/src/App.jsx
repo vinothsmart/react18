@@ -2,6 +2,7 @@ import { useState } from "react";
 import Title from "./Title";
 import menu from "./data";
 import Menu from "./Menu";
+import Categories from "./Categories";
 
 const allCategories = ["all", ...new Set(menu.map((item) => item.category))];
 
@@ -12,7 +13,8 @@ const App = () => {
   return (
     <main>
       <section className="menu">
-        <Title tite="our menu" />
+        <Title title="our menu" />
+        <Categories categories={categories} />
         <Menu items={menuItems} />
       </section>
     </main>

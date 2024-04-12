@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useCallback } from "react";
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import JobInfo from "./JobInfo";
 
 const url = "https://course-api.com/react-tabs-project";

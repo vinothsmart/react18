@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from "react";
-import { shortList } from "./data";
+import { list, shortList } from "./data";
 import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const Carousel = () => {
-  const [people, setPeople] = useState(shortList);
+  const [people, setPeople] = useState(list);
   const prevSlide = useCallback(() => {
     setPeople((prevPeople) => {
       const lastPerson = prevPeople[prevPeople.length - 1];

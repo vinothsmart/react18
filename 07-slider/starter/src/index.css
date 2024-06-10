@@ -66,8 +66,8 @@ html {
 
 body {
   background: var(--backgroundColor);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
   line-height: 1;
   color: var(--textColor);
@@ -304,7 +304,7 @@ ul {
   margin-top: 1rem;
   color: var(--primary-500);
 }
-.prev,
+/* .prev,
 .next {
   position: absolute;
   top: 200px;
@@ -318,7 +318,7 @@ ul {
   border-radius: var(--borderRadius);
   cursor: pointer;
   transition: var(--transition);
-}
+} */
 .prev:hover,
 .next:hover {
   background: var(--primary-500);
@@ -328,6 +328,14 @@ ul {
 }
 .next {
   right: 0;
+}
+.prev .next {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+}
+.next-slide {
+  transform: translateX(100%);
 }
 @media screen and (min-width: 800px) {
   .text {

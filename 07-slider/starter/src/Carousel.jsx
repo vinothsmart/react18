@@ -1,25 +1,18 @@
 import React, { useCallback, useState } from "react";
-import { list, shortList } from "./data";
+import { list } from "./data";
 import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const Carousel = () => {
-  const [people, setPeople] = useState(list);
+  const [people] = useState(list);
+  const [currentPerson, setCurrentPerson] = useState(0);
+
   const prevSlide = useCallback(() => {
-    setPeople((prevPeople) => {
-      const lastPerson = prevPeople[prevPeople.length - 1];
-      return [
-        lastPerson,
-        ...prevPeople.filter((person) => person !== lastPerson),
-      ];
-    });
+    setCurrentPerson((prevPerson) => (prevPerson - 1) % people.length);
   }, []);
 
   const nextSlide = useCallback(() => {
-    setPeople((prevPeople) => {
-      const [firstPerson, ...rest] = prevPeople;
-      return [...rest, firstPerson];
-    });
+    setCurrentPerson((prevPerson) => (prevPerson + 1) % people.length);
   }, []);
 
   return (
@@ -30,7 +23,10 @@ const Carousel = () => {
           <article
             key={id}
             className="slide"
-            style={{ transform: `translateX(${100 * personIndex}%)` }}
+            style={{
+              transform: `translateX(${100 * (personIndex - currentPerson)}%)`,
+            }}
+            opcacity={personIndex === currentPerson ? 1 : 0}
           >
             <img src={image} alt={name} className="person-img" />
             <h4>{name}</h4>

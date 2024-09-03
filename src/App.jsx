@@ -1,9 +1,9 @@
-import LatestReact from './tutorial/11-performance/starter/04-react-18';
+import MultipleInputs from './tutorial/06-forms/starter/03-multiple-inputs';
 
 function App() {
   return (
     <div className='container'>
-      <LatestReact />
+      <MultipleInputs />
     </div>
   );
 }

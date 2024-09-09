@@ -1,9 +1,9 @@
-import UncontrolledInputs from './tutorial/06-forms/starter/05-form-data';
+import ToggleExample from './tutorial/08-custom-hooks/starter/01-toggle';
 
 function App() {
   return (
     <div className='container'>
-      <UncontrolledInputs />
+      <ToggleExample />
     </div>
   );
 }

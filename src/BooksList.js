@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Book from "./Book";
 
 const BooksList = ({ books }) => {
@@ -10,4 +11,4 @@ const BooksList = ({ books }) => {
   );
 };
 
-export default BooksList;
+export default memo(BooksList);

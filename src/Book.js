@@ -1,7 +1,6 @@
-const Book = ({ img, title, author, number }) => {
-  // const { img, title, author, number } = props;
-  // console.log(props);
+import { memo } from "react";
 
+const Book = ({ img, title, author, number }) => {
   return (
     <article className="book">
       <img src={img} alt={title} />
@@ -12,4 +11,4 @@ const Book = ({ img, title, author, number }) => {
   );
 };
 
-export default Book;
+export default memo(Book);

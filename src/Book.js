@@ -1,6 +1,8 @@
 import { memo } from "react";
 
 const Book = ({ img, title, author, number }) => {
+  // const { img, title, author, number } = props;
+  // console.log(props);
   return (
     <article className="book">
       <img src={img} alt={title} />

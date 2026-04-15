@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const Title = ({ title, subTitle }) => {
   return (
     <div className="section-title">
@@ -8,4 +10,4 @@ const Title = ({ title, subTitle }) => {
   );
 };
 
-export default Title;
+export default memo(Title);

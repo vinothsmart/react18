@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { services } from "../data";
 import Service from "./Service";
 import Title from "./Title";

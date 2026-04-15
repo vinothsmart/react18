@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { tours } from "../data";
 import Title from "./Title";
 import TourCard from "./TourCard";
@@ -8,7 +8,7 @@ const Tours = () => {
     <section className="section" id="tours">
       <Title title="featured" subTitle="tours" />
       <div className="section-center featured-center">
-        {tours.map(({ id, img, date, title, text, days, location, price }) => (
+        {/* {tours.map(({ id, img, date, title, text, days, location, price }) => (
           <TourCard
             key={id}
             img={img}
@@ -19,6 +19,10 @@ const Tours = () => {
             location={location}
             price={price}
           />
+        ))} */}
+        {/* using spread operator */}
+        {tours.map((tour) => (
+          <TourCard key={tour.id} {...tour} />
         ))}
       </div>
     </section>
